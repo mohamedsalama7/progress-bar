@@ -1,0 +1,305 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+body {
+  color: #fff;
+  background: #081b29;
+}
+
+.sub-title {
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 70px;
+  padding-top: 30px;
+}
+
+.sub-title span {
+  color: #0ef;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.container-1 {
+  width: 600px;
+  height: 500px;
+  padding: 30px 80px;
+  margin-left: 120px;
+}
+
+.heading {
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 5px;
+  margin-bottom: 50px;
+}
+
+.bar {
+  font-size: 23px;
+}
+
+.Technical-bars .bar {
+  margin: 40px 0;
+}
+
+.Technical-bars .bar:first-child {
+  margin-top: 0;
+}
+
+.Technical-bars .bar:last-child {
+  margin-bottom: 0;
+}
+
+.Technical-bars .bar .info {
+  margin-bottom: 5px;
+}
+
+.Technical-bars .bar .info span {
+  font-size: 17px;
+  font-weight: 500;
+  animation: showText 0.5s 1s linear forwards;
+  opacity: 0;
+}
+
+.Technical-bars .bar .progress-line {
+  position: relative;
+  border-radius: 10px;
+  width: 100%;
+  height: 5px;
+  background-color: #000;
+  animation: animate 1s ease-in forwards;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.Technical-bars .bar .progress-line span {
+  height: 100%;
+  background-color: #0ef;
+  position: absolute;
+  border-radius: 10px;
+  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.progress-line.html span {
+  width: 90%;
+}
+
+.progress-line.css span {
+  width: 70%;
+}
+
+.progress-line.javascript span {
+  width: 85%;
+}
+
+.progress-line.python span {
+  width: 50%;
+}
+
+.progress-line.react span {
+  width: 75%;
+}
+
+.progress-line span::after {
+  position: absolute;
+  padding: 1px 8px;
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+  top: -20px;
+  right: -20px;
+  animation: showText 0.5s 1.5s linear forwards;
+  opacity: 0;
+}
+
+.progress-line.html span::after {
+  content: "90%";
+}
+
+.progress-line.css span::after {
+  content: "70%";
+}
+
+.progress-line.javascript span::after {
+  content: "85%";
+}
+
+.progress-line.python span::after {
+  content: "50%";
+}
+
+.progress-line.react span::after {
+  content: "75%";
+}
+
+.progress-line span::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-top-color: #000;
+  top: -7px;
+  right: -7px;
+  animation: showText 0.5s 1.5s linear forwards;
+  opacity: 1;
+}
+
+@keyframes showText {
+  100% {
+    opacity: 1;
+  }
+}
+
+.Technical-bars .bar:nth-child(odd) i {
+  color: #c95d2e;
+}
+
+.Technical-bars .bar:nth-child(even) i {
+  color: #147bbc;
+}
+
+
+/* ********************************** */
+
+.container-2 {
+  flex: 1;
+  padding-top: 30px;
+
+  margin-right: 120px;
+}
+
+.raidal-bars {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.raidal-bars .bar {
+  width: 300px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.raidal-bars .bar .title {
+  font-size: 20px;
+  text-align: center;
+  opacity: 0;
+  animation: showText 1s 1s forwards;
+}
+
+/* لتنسيق النص داخل الدائرة */
+.progress-text {
+  fill: hsla(0, 2%, 31%, 0.605);
+  /* لون النص */
+  font-weight: bold;
+  opacity: 0;
+  animation: showText 1s 3s forwards;
+  /* جعل النص عريض */
+}
+
+/* لتنسيق الدائرة الخلفية */
+.progress-bg {
+  transform: rotate(-90deg);
+
+  transform-origin: center;
+
+  /* لون الخلفية */
+  animation: bg-animation 1.4s 1s ease-out forwards;
+  /* الأنيميشن على الدائرة الخلفية */
+}
+
+/* لتنسيق الدائرة الأمامية (التي تمثل النسبة) */
+.progress-bar {
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transition: stroke-dasharray 1s 2s ease;
+}
+
+.raidal-bars .bar:nth-child(1) .progress-bar {
+  stroke-dasharray: 90, 100;
+}
+
+.raidal-bars .bar:nth-child(2) .progress-bar {
+  stroke-dasharray: 65, 100;
+}
+
+.raidal-bars .bar:nth-child(3) .progress-bar {
+  stroke-dasharray: 75, 100;
+}
+
+.raidal-bars .bar:nth-child(4) .progress-bar {
+  stroke-dasharray: 85, 100;
+}
+
+
+/* أنيميشن لملء النسبة المئوية للدائرة الأمامية */
+@keyframes progress-animation {
+  0% {
+    stroke-dasharray: 0, 100;
+    /* في البداية الحافة تكون غير مرئية */
+  }
+
+  100% {
+    stroke-dasharray: 75, 100;
+    /* في النهاية الحافة تكون ملونة ب75% */
+  }
+}
+
+/* أنيميشن لظهور وتغيير شكل الدائرة الخلفية */
+@keyframes bg-animation {
+  100% {
+    stroke-dasharray: 100, 100;
+    /* خلفية مكتملة */
+  }
+}
+
+
+
+@media screen and (max-width:1024px) {
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .heading {
+    margin: 0 0px 50px 0;
+  }
+
+  .container-1 {
+    margin: 0;
+    padding-bottom: 50px;
+  }
+
+  .container-2 {
+    margin: 160px 0 0 0;
+    padding: 0;
+  }
+
+  .container-2 .raidal-bars {
+    flex-direction: column;
+  }
+}
